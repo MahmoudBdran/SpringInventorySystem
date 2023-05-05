@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body class="sb-nav-fixed">
+<form method="post" action="/saveProduct" enctype="multipart/form-data">
+  <label for="productName">Product Name:</label>
+  <input type="text" name="productName" id = "productName" required><br><br>
+
+  <label for="productType">Product Type:</label>
+  <input type="text" name="productType" id = "productType" required><br><br>
+
+  <label for="productImage">Product Image:</label>
+  <input type="file" name="productImage" id = "productImage" required><br><br>
+
+  <input type="submit" value="Save Product">
+</form>
+
+
+</body>
+</html>

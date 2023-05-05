@@ -38,11 +38,11 @@ public class ItemController {
     @Autowired
     private VendorService vendorService;
     private Item item;
-    @GetMapping("/")
-    public String home() {
-        // code here
-        return "index";
-    }
+//    @GetMapping("/")
+//    public String home() {
+//        // code here
+//        return "index";
+//    }
 
     @Autowired
     private ItemConvertor itemConvertor;

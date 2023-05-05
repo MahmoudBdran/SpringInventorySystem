@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="header :: myHeader"></div>
+</head>
+<body class="sb-nav-fixed">
+<div th:replace="navbar :: myNavbar"></div>
+<div id="layoutSidenav">
+  <div th:replace="sidebar :: mySidebar"></div>
+  <!-- Form starts from here -->
+  <div id="layoutSidenav_content">
+    <div class="container">
+      <br>
+      <div class="spinner-grow text-muted"></div>
+      <div class="spinner-grow text-primary"></div>
+      <div class="spinner-grow text-success"></div>
+      <div class="spinner-grow text-info"></div>
+      <div class="spinner-grow text-warning"></div>
+      <div class="spinner-grow text-danger"></div>
+      <div class="spinner-grow text-secondary"></div>
+      <div class="spinner-grow text-dark"></div>
+      <div class="spinner-grow text-light"></div>
+      <hr>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+        <li class="breadcrumb-item active">Add Inventory Item</li>
+      </ol>
+      <!--enctype="multipart/form-data"-->
+      <form class="needs-validation"  action="/ItemCreate" id="upload-form" enctype="multipart/form-data"
+            method="POST" novalidate>
+        <!-- Text input-->
+<!--        <div class="alert alert-danger">-->
+<!--&lt;!&ndash;             th:if="${#fields.hasErrors('global')}">&ndash;&gt;-->
+<!--          <ul>-->
+<!--&lt;!&ndash;            <li th:each="err : ${#fields.errors('global')}" th:text="${err}"></li>&ndash;&gt;-->
+<!--          </ul>-->
+<!--        </div>-->
+        <fieldset class="border p-2">
+          <legend class="w-auto"> Add Inventory Item </legend>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Name</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <input name="itemName"
+                                                                                                placeholder="Enter Item Name"
+                                                                                                class="form-control" type="text" required>
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('itemName')}">&ndash;&gt;-->
+<!--                   </div>-->
+            </div>
+          </div>
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Price</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <input name="itemPrice"
+                                                                                                placeholder="Enter Item Price"
+                                                                                                class="form-control" type="number" step="any" required min="1">
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('itemPrice')}"&ndash;&gt;-->
+<!--&lt;!&ndash;                  >&ndash;&gt;-->
+
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Quantity</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <input
+                      name="itemQuantity" placeholder="Enter Item Quantity"
+                       class="form-control" type="number"
+                      step="1" required min="1">
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('itemQuantity')}"&ndash;&gt;-->
+<!--&lt;!&ndash;                 >&ndash;&gt;-->
+
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Fine Rate</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <input name="fineRate"
+                                                                                                placeholder="Enter Fine Rate"
+                                                                                                class="form-control" type="number" step="any" required min="1">
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('fineRate')}"&ndash;&gt;-->
+<!--&lt;!&ndash;                 >&ndash;&gt;-->
+
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Invoice Number</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span>
+                <input
+                      name="invoiceNumber" placeholder="Enter Invoice Number"
+                      class="form-control" type="number"
+                      step="1" required min=1>
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('invoiceNumber')}"&ndash;&gt;-->
+<!--&lt;!&ndash;                   >&ndash;&gt;</div>-->
+          </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Vendor Name</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <input name="vendorName"
+                                                                                                placeholder="Enter Vendor Number"
+                                                                                                class="form-control" type="text" required>
+              </div>
+<!--              <div class="alert alert-danger">-->
+<!--&lt;!&ndash;                   th:if="${#fields.hasErrors('vendorName')}"&ndash;&gt;-->
+<!--&lt;!&ndash;                  >&ndash;&gt;-->
+
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Item Type</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+									<span class="input-group-addon"><i
+                                            class="glyphicon glyphicon-user"></i></span> <select
+                      class="form-control" name="itemType">
+                <option th:each="itemType : ${itemTypeList}"
+                        th:value="${itemType.typeName}"
+                        th:text="${itemType.typeName}">
+              </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-3" >
+            <label for="file">File:</label>
+            <!-- th:field="*{data}" -->
+            <input class="form-control"   type="file" id="file" name="data" required />
+          </div>
+          <!-- Select Basic -->
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <button id="resetBtn" type="reset" class="btn btn-danger ">Reset</button>
+              <button id="addBtn" type="submit"
+                      class="btn btn-success float-right">Issue Item</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<div></div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<div th:replace="footer :: myFooter"></div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html >
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <div th:replace="header :: myHeader"></div>
+</head>
+<body>
+<div th:replace="navbar :: myNavbar"></div>
+<!-- create navigation bar ( header) -->
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+<!--  <div class="container">-->
+<!--    <div class="navbar-header">-->
+<!--      <button type="button" class="navbar-toggle collapsed"-->
+<!--              data-toggle="collapse" data-target="#navbar" aria-expanded="false"-->
+<!--              aria-controls="navbar">-->
+<!--        <span class="sr-only">Toggle navigation</span> <span-->
+<!--              class="icon-bar"></span> <span class="icon-bar"></span> <span-->
+<!--              class="icon-bar"></span>-->
+<!--      </button>-->
+<!--      <a class="navbar-brand" href="#" th:href="@{/}">Registration and-->
+<!--        Login Module</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<br>
+<br>
+<div class = "container">
+  <div class = "row ">
+    <div class = "col-md-4 col-md-offset-1">
+
+      <h1> Sign In </h1>
+      <hr>
+      <form th:action="@{/login}" method="post">
+
+        <div>
+          <!-- error message -->
+          <div th:if="${param.error}">
+            <div class="alert alert-danger">Invalid username or
+              password.</div>
+          </div>
+
+          <!-- logout message -->
+          <div th:if="${param.logout}">
+            <div class="alert alert-info">You have been logged out  :  <span th:text="${logoutuser}"> User </span>.</div>
+          </div>
+
+          <div class = "form-group">
+            <label for ="username"> Username </label> :
+            <input type="text" class = "form-control" id ="username" name = "username"
+                   placeholder="Enter Email ID" autofocus="autofocus">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>: <input type="password"
+                                                           id="password" name="password" class="form-control"
+                                                           placeholder="Enter Password" />
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <div class="form-group">
+
+              <div class="col-sm-12 col-sm-offset-3 ">
+                <input type="submit" name="login-submit" id="login-submit"
+                       class="form-control btn btn-dark" value="Log In" />
+              </div>
+          </div>
+        </div>
+      </form>
+      <div class="form-group">
+						<span>Don't have an account? <a href="/" th:href="@{/registration}">Create account</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+        crossorigin="anonymous"></script>
+<script src="js/chart-area-demo.js"></script>
+<script src="js/chart-bar-demo.js"></script>
+<script
+        src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
+        crossorigin="anonymous"></script>
+<script src="js/datatables-demo.js"></script>
+</body>
+</html>
