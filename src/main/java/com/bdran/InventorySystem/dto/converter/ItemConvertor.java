@@ -3,6 +3,8 @@ package com.bdran.InventorySystem.dto.converter;
 
 import com.bdran.InventorySystem.dto.ItemDto;
 import com.bdran.InventorySystem.model.Item;
+import com.bdran.InventorySystem.model.ItemType;
+import com.bdran.InventorySystem.model.Vendor;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ public class ItemConvertor {
 		ItemDto itemDto = new ItemDto();
 		itemDto.setItemId(item.getId());
 		itemDto.setFineRate(item.getFineRate());
+//		itemDto.setData(item.getData());
+		itemDto.setData(item.getData());
 		itemDto.setItemPrice(item.getPrice());
 		itemDto.setInvoiceNumber(item.getInvoiceNumber());
 		itemDto.setItemName(item.getName());
@@ -44,7 +48,15 @@ public class ItemConvertor {
 	}
 
 	public Item dtoToModel(ItemDto itemDto) {
+		ItemType itemType=new ItemType();
+		Vendor vendor = new Vendor();
+		vendor.setName(itemDto.getVendorName());
+		itemType.setTypeName(itemDto.getItemType());
 		Item item = new Item();
+		item.setId(itemDto.getItemId());
+		item.setItemType(itemType);
+		item.setVendor(vendor);
+		item.setData(itemDto.getData());
 		item.setFineRate(itemDto.getFineRate());
 		item.setInvoiceNumber(itemDto.getInvoiceNumber());
 		item.setQuantity(itemDto.getItemQuantity());

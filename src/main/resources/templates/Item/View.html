@@ -10,15 +10,15 @@
 		<div id="layoutSidenav_content">
 			<div class="container">
 				<br>
-				<div class="spinner-grow text-muted"></div>
-				<div class="spinner-grow text-primary"></div>
-				<div class="spinner-grow text-success"></div>
-				<div class="spinner-grow text-info"></div>
-				<div class="spinner-grow text-warning"></div>
-				<div class="spinner-grow text-danger"></div>
-				<div class="spinner-grow text-secondary"></div>
-				<div class="spinner-grow text-dark"></div>
-				<div class="spinner-grow text-light"></div>
+<!--				<div class="spinner-grow text-muted"></div>-->
+<!--				<div class="spinner-grow text-primary"></div>-->
+<!--				<div class="spinner-grow text-success"></div>-->
+<!--				<div class="spinner-grow text-info"></div>-->
+<!--				<div class="spinner-grow text-warning"></div>-->
+<!--				<div class="spinner-grow text-danger"></div>-->
+<!--				<div class="spinner-grow text-secondary"></div>-->
+<!--				<div class="spinner-grow text-dark"></div>-->
+<!--				<div class="spinner-grow text-light"></div>-->
 				<hr>
 				<ol class="breadcrumb mb-4">
 					<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
@@ -27,6 +27,10 @@
 				<button style="font-size: 20px" type="button"
 					class="btn btn-outline-dark" id="myButton">
 					Add a new item <i class="fa fa-plus"></i>
+				</button>
+				<button style="font-size: 20px" type="button"
+						class="btn btn-dark" onmouseover="BtnMouseOver()" id="userBrowsingBtn">
+					Browse Items <i class="fa fa-plus"></i>
 				</button>
 				<br> <br>
 				<table class="table table-bordered table-hover">
@@ -68,8 +72,17 @@
 			</div>
 			<script type="text/javascript">
 				document.getElementById("myButton").onclick = function() {
-					location.href = "ItemCreate";
+location.href = "ItemCreate";
+
 				};
+				document.getElementById("userBrowsingBtn").onclick = function() {
+location.href = "user/BrowseItems";
+
+				};
+				function BtnMouseOver(){
+				document.getElementById("userBrowsingBtn").classList.remove();
+				document.getElementById("userBrowsingBtn").classList.add('btn btn-outline-dark');
+				}
 			</script>
 		</div>
 	</div>

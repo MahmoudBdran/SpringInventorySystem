@@ -1,5 +1,6 @@
 package com.bdran.InventorySystem.dto;
 
+import javax.persistence.Lob;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -26,12 +27,19 @@ public class ItemDto {
 	private double itemPrice;
 
 	@NotNull(message = "Fine rate is mandatory.")
-	@Min(value = 1, message = "Fine rate must be greater than 0.")
+		@Min(value = 0, message = "Fine rate must be greater than 0.")
 	@Max(value = (long) Double.MAX_VALUE, message = "Fine rate must be lesser than " + Double.MAX_VALUE)
 	private double fineRate;
 
+
+//	@Lob
+//	private byte[] data;
+//
+	@Lob
+	private String data;
+
 	@NotNull(message = "Item name is mandatory.")
-	@Pattern(regexp = "(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?", message = "Item name can only contain alphabets.")
+	//@Pattern(regexp = "(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?", message = "Item name can only contain alphabets.")
 	private String itemName;
 
 	private String itemType;
@@ -45,7 +53,7 @@ public class ItemDto {
 	}
 
 	public ItemDto(long itemId, int itemQuantity, double itemPrice, double fineRate, String itemName,
-                   long invoiceNumber, String itemType, String vendorName) {
+                   long invoiceNumber, String itemType, String vendorName,String data) {
 		super();
 		this.itemId = itemId;
 		this.itemQuantity = itemQuantity;
@@ -55,6 +63,7 @@ public class ItemDto {
 		this.invoiceNumber = invoiceNumber;
 		this.itemType = itemType;
 		this.vendorName = vendorName;
+		this.data = data;
 	}
 
 	public long getItemId() {
@@ -119,6 +128,19 @@ public class ItemDto {
 
 	public void setVendorName(String vendorName) {
 		this.vendorName = vendorName;
+	}
+//	public byte[] getData() {
+//		return data;
+//	}
+
+	public String getData() {
+		return data;
+	}
+//	public void setData(byte[] data) {
+//		this.data = data;
+//	}
+	public void setData(String data) {
+		this.data = data;
 	}
 
 }

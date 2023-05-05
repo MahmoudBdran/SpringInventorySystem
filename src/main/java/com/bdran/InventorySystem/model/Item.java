@@ -12,6 +12,25 @@ public class Item {
     private Long id;
     @Column(name = "item_quantity")
     private int quantity;
+//    @Column(name = "item_image")
+//    @Lob
+//    private byte[] data;
+
+   private String data;
+//    public byte[] getData() {
+//        return data;
+//    }
+//
+//    public void setData(byte[] data) {
+//        this.data = data;
+//    }
+public String getData() {
+    return data;
+}
+
+    public void setData(String data) {
+        this.data = data;
+    }
     @Column(name = "item_price")
     private double price;
     @Column(name = "item_fine_rate")

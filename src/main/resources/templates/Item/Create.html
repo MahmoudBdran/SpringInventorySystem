@@ -11,22 +11,23 @@
 		<div id="layoutSidenav_content">
 			<div class="container">
 				<br>
-				<div class="spinner-grow text-muted"></div>
-				<div class="spinner-grow text-primary"></div>
-				<div class="spinner-grow text-success"></div>
-				<div class="spinner-grow text-info"></div>
-				<div class="spinner-grow text-warning"></div>
-				<div class="spinner-grow text-danger"></div>
-				<div class="spinner-grow text-secondary"></div>
-				<div class="spinner-grow text-dark"></div>
-				<div class="spinner-grow text-light"></div>
+<!--				<div class="spinner-grow text-muted"></div>-->
+<!--				<div class="spinner-grow text-primary"></div>-->
+<!--				<div class="spinner-grow text-success"></div>-->
+<!--				<div class="spinner-grow text-info"></div>-->
+<!--				<div class="spinner-grow text-warning"></div>-->
+<!--				<div class="spinner-grow text-danger"></div>-->
+<!--				<div class="spinner-grow text-secondary"></div>-->
+<!--				<div class="spinner-grow text-dark"></div>-->
+<!--				<div class="spinner-grow text-light"></div>-->
 				<hr>
 				<ol class="breadcrumb mb-4">
 					<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
 					<li class="breadcrumb-item active">Add Inventory Item</li>
 				</ol>
-				<form class="needs-validation" th:action="@{/ItemCreate}"
-					th:object="${itemDto}" method="post" novalidate>
+				<!--enctype="multipart/form-data"-->
+				<form class="needs-validation"  th:action="@{/ItemCreate}" id="upload-form"
+					th:object="${itemDto}" method="POST" novalidate>
 					<!-- Text input-->
 					<div class="alert alert-danger"
 						th:if="${#fields.hasErrors('global')}">
@@ -137,6 +138,7 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Select Basic -->
 						<!-- Button -->
 						<div class="form-group">
@@ -149,6 +151,7 @@
 						</div>
 					</fieldset>
 				</form>
+
 			</div>
 		</div>
 	</div>
@@ -156,5 +159,8 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<div th:replace="footer :: myFooter"></div>
+
+	<script>
+</script>
 </body>
 </html>
