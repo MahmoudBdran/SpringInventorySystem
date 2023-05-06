@@ -31,8 +31,8 @@ protected void configure(HttpSecurity http) throws Exception {
             http
             .csrf().disable() // disable CSRF protection
             .authorizeRequests()
-            .antMatchers("/api/v1/role/**").hasAuthority("admin") // allow access to /api/v1/role for users with ADMIN role
-            .antMatchers("/api/v1/user/**").hasAuthority("user") // allow access to /api/v1/user for users with USER role
+//            .antMatchers("/api/v1/role/**").hasAuthority("admin") // allow access to /api/v1/role for users with ADMIN role
+//            .antMatchers("/api/v1/user/**").hasAuthority("user") // allow access to /api/v1/user for users with USER role
             .anyRequest().authenticated().and().formLogin().loginPage("/login")
             .permitAll()
             .and()
