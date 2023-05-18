@@ -11,26 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
     String getAuthusrname;
     @GetMapping("/login")
-    public String login(Model model){
-        model.addAttribute("logoutuser",getAuthusrname);
+    public String login(Model model) {
+        model.addAttribute("logoutuser", getAuthusrname);
         return "login";
     }
-
-
-//    @GetMapping("/login?logout")
-//    public String login(Model model,@RequestParam("logout") boolean paramValue){
-//
-//
-//       if(paramValue){
-//           model.addAttribute("logoutuser",getAuthusrname);
-//       }
-//        return "login";
-//    }
-//    @GetMapping("/login?error")
-//    public String login(@RequestParam("error") boolean paramValue){
-//
-//        return "redirect:/login";
-//    }
 
 
     @GetMapping("")

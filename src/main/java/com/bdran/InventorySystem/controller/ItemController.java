@@ -129,18 +129,6 @@ public class ItemController {
         return "redirect:/ItemView";
     }
 
-    private String decodeImage(String image) {
-        byte[] bytes = new byte[image.length()/2];
-
-        for (int i = 0; i < image.length(); i+=2) {
-            bytes[i/2] = (byte) ((Character.digit(image.charAt(i), 16) << 4)
-                    + Character.digit(image.charAt(i+1), 16));
-        }
-
-        String base64Encoded = Base64.getEncoder().encodeToString(bytes);
-
-        return image;
-    }
 
     @GetMapping("/ItemEdit/{id}")
     public String Edit(@PathVariable(value = "id") long id, Model model) {
