@@ -16,12 +16,15 @@
 //    String username= authentication.getName();
 //    Date currentDate = new Date();
 //    Date expireDate = new Date(currentDate.getTime() + SecurityConstants.JWT_EXPIRATION);
+//    System.out.println("expiration is in : "+expireDate.toString());
 //    String token = Jwts.builder()
 //            .setSubject(username)
-//            .setIssuedAt(new Date())
+//            .setIssuedAt( new Date())
 //            .setExpiration(expireDate)
 //            .signWith(SignatureAlgorithm.ES512,SecurityConstants.JWT_SECRET)
 //            .compact();
+//    System.out.println("New token :");
+//    System.out.println(token);
 //    return token;
 //}
 //

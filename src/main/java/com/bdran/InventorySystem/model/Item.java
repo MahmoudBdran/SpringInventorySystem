@@ -9,7 +9,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
-    private Long id;
+        private Long id;
     @Column(name = "item_quantity")
     private int quantity;
 //    @Column(name = "item_image")

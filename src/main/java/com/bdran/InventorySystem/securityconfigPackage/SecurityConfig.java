@@ -1,6 +1,6 @@
 //package com.bdran.InventorySystem.securityconfigPackage;
 //
-//import com.bdran.InventorySystem.security.JWTAuthenticationFilter;
+////import com.bdran.InventorySystem.security.JWTAuthenticationFilter;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
@@ -22,24 +22,23 @@
 //@Configuration
 //@EnableWebSecurity
 //public class SecurityConfig {
-//    @Autowired
-//    private JwtAuthEntryPoint jwtAuthEntryPoint;
-//private CustomUserDetailsService userDetailsService;
+////    private JwtAuthEntryPoint jwtAuthEntryPoint;
 //    @Bean
 //    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 //        http.csrf().disable()
 //                .exceptionHandling()
-//                .authenticationEntryPoint(jwtAuthEntryPoint)
+////                .authenticationEntryPoint(jwtAuthEntryPoint)
 //                .and()
 //                .sessionManagement()
 //                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 //                .and()
 //                .authorizeRequests()
 //                .antMatchers("api/auth/**").permitAll()
+//                .antMatchers("/login").permitAll()
 //                .anyRequest().authenticated()
 //                .and()
 //                .httpBasic();
-//        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+////        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 //        return http.build();
 //    }
 //
@@ -63,13 +62,10 @@
 //    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration)throws  Exception{
 //        return configuration.getAuthenticationManager();
 //    }
-//    @Bean
-//    PasswordEncoder passwordEncoder(){
-//        return new BCryptPasswordEncoder();
-//    }
 //
-//    @Bean
-//    public JWTAuthenticationFilter jwtAuthenticationFilter(){
-//        return new JWTAuthenticationFilter();
-//    }
+//
+////    @Bean
+////    public JWTAuthenticationFilter jwtAuthenticationFilter(){
+////        return new JWTAuthenticationFilter();
+////    }
 //}
